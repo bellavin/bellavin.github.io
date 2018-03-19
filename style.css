@@ -1,0 +1,185 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.content {
+	width: 100%;
+	height: 100%;
+	background: #ffffff; /* Old Browsers */
+	background: -webkit-radial-gradient(center,#ffffff,#ffdcc7); /*Safari 5.1-6*/
+	background: -o-radial-gradient(center,#ffffff,#ffdcc7); /*Opera 11.1-12*/
+	background: -moz-radial-gradient(center,#ffffff,#ffdcc7); /*Fx 3.6-15*/
+	background: radial-gradient(ellipse at center, #ffffff, #ffdcc7); /*Standard*/
+}
+
+.about-me {
+	display: table;
+	/*background: pink;*/
+	vertical-align: top;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.about-me__title {
+	margin: 0;
+	margin-top: 100px;
+	padding: 0;
+	font-family: 'Roboto', 'Tahoma', sans-serif;
+	font-weight: 100;
+	font-size: 100px;
+	opacity: 0.7;
+}
+
+.about-me__title--name {
+	font-weight: 300;
+}
+
+.about-me__profession {
+	margin: 0;
+	margin-top: -7px;
+	padding: 0;
+	font-family: 'Roboto', 'Tahoma', serif;
+	font-weight: 300;
+	font-size: 30px;
+	opacity: 0.7;
+}
+
+.grid {
+	display: flex;
+	position: relative;
+	margin: 0 auto;
+	margin-top: 50px;
+	justify-content: space-between;
+	/*padding: 1em 0 4em;*/
+	max-width: 875px;
+	list-style: none;
+	text-align: center;
+
+	/*background: pink;*/
+}
+
+.grid figure {
+	position: relative;
+
+	/*margin: 10px 1%;*/
+	min-width: 320px;
+	max-width: 450px;
+	max-height: 360px;
+	/*width: 48%;*/
+
+	/*float: left;*/
+	overflow: hidden;
+
+	text-align: center;
+	
+	/*background: #3085a3;*/
+	/*background: #ffbd94;*/
+	cursor: pointer;
+}
+
+.grid figure img {
+	position: relative;
+
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	max-width: none;
+	width: -webkit-calc(100% + 50px);
+	width: calc(100% + 50px);
+
+	opacity: 0.2;
+
+	transition: opacity 0.35s, transform 0.35s;
+	transform: translate3d(-40px,0,0);
+}
+
+.grid figure figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+	padding: 2em;
+
+	color: rgba(0,0,0,1);
+	font-size: 24px;
+	text-align: left;
+	text-transform: uppercase;
+
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+
+	width: 100%;
+	height: 100%;
+	
+	text-indent: 200%;
+	font-size: 0;
+	white-space: nowrap;
+	opacity: 0;
+}
+
+.grid figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+	font-family: 'Roboto', 'Tahoma', sans-serif;
+	margin: 0;
+	transform: translate3d(0,40px,0);
+	transition: transform 0.35s;
+}
+
+/*.grid figure h2 span {
+	font-weight: 800;
+}*/
+
+.grid figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+	margin: 0;
+	transform: translate3d(0,40px,0);
+	font-family: 'Roboto', 'Tahoma', sans-serif;
+	opacity: 0;
+	transition: opacity 0.2s, transform 0.35s;
+}
+
+figure.effect-lily figcaption > div {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 2em;
+	width: 100%;
+	height: 50%;
+}
+
+
+figure.effect-lily:hover img {
+	transform: translate3d(0,0,0);
+	opacity: 0.1;
+}
+
+figure.effect-lily:hover h2 {
+	transform: translate3d(0,0,0);
+}
+
+figure.effect-lily:hover p {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+	-webkit-transition-duration: 0.35s;
+	transition-duration: 0.35s;
+	transform: translate3d(0,0,0);
+	opacity: 1;
+}
