@@ -77,6 +77,7 @@ html, body {
 	
 	/*background: #3085a3;*/
 	/*background: #ffbd94;*/
+	box-shadow: 0px 5px 16px 0px rgba(0,0,0,0.75);
 	cursor: pointer;
 }
 
