@@ -31,6 +31,17 @@ html, body {
 	font-weight: 100;
 	font-size: 100px;
 	opacity: 0.7;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+}
+
+.about-me__title:hover {
+	opacity: 1;
+}
+
+.about-me__link {
+	text-decoration: none;
+	color: black;
 }
 
 .about-me__title--name {
@@ -47,140 +58,57 @@ html, body {
 	opacity: 0.7;
 }
 
-.grid {
-	display: flex;
-	position: relative;
-	margin: 0 auto;
-	margin-top: 50px;
-	justify-content: space-between;
-	/*padding: 1em 0 4em;*/
-	max-width: 875px;
-	list-style: none;
-	text-align: center;
-
-	/*background: pink;*/
+.my-works {
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 25px;
+	width: 464px;
 }
 
-.grid figure {
-	position: relative;
-
-	/*margin: 10px 1%;*/
-	min-width: 320px;
-	max-width: 450px;
-	max-height: 360px;
-	/*width: 48%;*/
-
-	/*float: left;*/
-	overflow: hidden;
-
-	text-align: center;
-	
-	/*background: #3085a3;*/
-	/*background: #ffbd94;*/
-	box-shadow: 0px 5px 16px 0px rgba(0,0,0,0.75);
-	cursor: pointer;
-}
-
-.grid figure img {
-	position: relative;
-
-	display: block;
-	min-height: 100%;
-	max-width: 100%;
-	max-width: none;
-	width: -webkit-calc(100% + 50px);
-	width: calc(100% + 50px);
-
-	opacity: 0.2;
-
-	transition: opacity 0.35s, transform 0.35s;
-	transform: translate3d(-40px,0,0);
-}
-
-.grid figure figcaption {
-	position: absolute;
-	top: 0;
-	left: 0;
-
-	width: 100%;
-	height: 100%;
-	padding: 2em;
-
-	color: rgba(0,0,0,1);
-	font-size: 24px;
-	text-align: left;
-	text-transform: uppercase;
-
-	backface-visibility: hidden;
-}
-
-.grid figure figcaption::before,
-.grid figure figcaption::after {
-	pointer-events: none;
-}
-
-.grid figure figcaption > a {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1000;
-
-	width: 100%;
-	height: 100%;
-	
-	text-indent: 200%;
-	font-size: 0;
-	white-space: nowrap;
-	opacity: 0;
-}
-
-.grid figure h2 {
-	word-spacing: -0.15em;
+.my-works__title {
+	font-family: 'Roboto', 'Tahoma', serif;
 	font-weight: 300;
-	font-family: 'Roboto', 'Tahoma', sans-serif;
-	margin: 0;
-	transform: translate3d(0,40px,0);
-	transition: transform 0.35s;
+	font-size: 22px;
+	opacity: 0.7;
 }
 
-/*.grid figure h2 span {
-	font-weight: 800;
-}*/
-
-.grid figure p {
-	letter-spacing: 1px;
-	font-size: 68.5%;
-	margin: 0;
-	transform: translate3d(0,40px,0);
-	font-family: 'Roboto', 'Tahoma', sans-serif;
-	opacity: 0;
-	transition: opacity 0.2s, transform 0.35s;
+.my-works__items {
+	display: flex;
+	justify-content: space-between;
+	list-style-type: none;
+	padding-left: 0;
 }
 
-figure.effect-lily figcaption > div {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	padding: 2em;
+.my-works__item {
+	height: 100px;
+	width: 200px;
+	background-color: white;
+	box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.2);
+	transition-property: box-shadow;
+	transition-duration: 1s;
+}
+
+.my-works__item:hover,
+.my-works__item:focus {
+	box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
+}
+
+.my-works__item--sedona {
+	background-image: url("img/text-sedona-index.png");
+	background-position: center center;
+	background-size: 85%;
+	background-repeat: no-repeat;
+}
+
+.my-works__item--technomart {
+	background-image: url("img/tech.jpg");
+	background-position: center center;
+	background-size: 85%;
+	background-repeat: no-repeat;
+}
+
+.my-works__link {
+	display: block;
 	width: 100%;
-	height: 50%;
-}
-
-
-figure.effect-lily:hover img {
-	transform: translate3d(0,0,0);
-	opacity: 0.1;
-}
-
-figure.effect-lily:hover h2 {
-	transform: translate3d(0,0,0);
-}
-
-figure.effect-lily:hover p {
-	-webkit-transition-delay: 0.05s;
-	transition-delay: 0.05s;
-	-webkit-transition-duration: 0.35s;
-	transition-duration: 0.35s;
-	transform: translate3d(0,0,0);
-	opacity: 1;
+	height: 100%;
 }
