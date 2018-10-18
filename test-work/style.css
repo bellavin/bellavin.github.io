@@ -1,0 +1,263 @@
+body {
+  font-size: 12px;
+  font-family: "Arial", sans-serif;
+  background-image: url(img/bg.png);
+}
+
+a {
+  outline: none;
+}
+
+.clearfix::after {
+  content: ".";
+
+  display: block;
+  clear: both;
+  height: 0;
+
+  visibility: hidden;
+}
+
+.wrapper {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 423px;
+  margin: 0 auto;
+  padding: 34px;
+  padding-bottom: 0;
+
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffe553), to(#ff8a00));
+
+  background: linear-gradient(to bottom, #ffe553, #ff8a00);
+  border-radius: 30px;
+  -webkit-box-shadow: 0 0 13px 0 rgba(0, 0, 0, 1);
+          box-shadow: 0 0 13px 0 rgba(0, 0, 0, 1);
+}
+
+
+/* User */
+
+.user {
+  padding-top: 14px;
+  padding-right: 3px;
+  padding-bottom: 14px;
+  padding-left: 3px;
+
+  font-size: 12px;
+  font-family: "Trebuchet MS", "Arial", sans-serif;
+}
+
+.user__photo {
+  float: left;
+  margin-right: 8px;
+  border: 1px solid #dfdbcf;
+}
+
+.user__name {
+  display: block;
+  margin-bottom: 6px;
+  color: #010101;
+}
+
+.user__name:hover,
+.user__name:focus {
+  opacity: 0.75;
+}
+
+.user__settings {
+  margin-right: 5px;
+  color: #b4622d;
+}
+
+.user__settings:hover,
+.user__settings:focus {
+  opacity: 0.75;
+}
+
+.user__log-out {
+  position: relative;
+  color: white;
+}
+
+.user__log-out::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 40px;
+
+  display: block;
+  width: 10px;
+  height: 11px;
+
+  background: url(img/log-out-btn.png) no-repeat center center;
+}
+
+.user__log-out:hover,
+.user__log-out:focus {
+  color: #f5f5f5;
+}
+
+.user__log-out:hover::after {
+  opacity: 0.75;
+}
+
+
+/* Login */
+
+.login {
+  padding-top: 34px;
+}
+
+.login__top {
+  height: 14px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+
+  text-align: right;
+
+  background: -webkit-gradient(linear, left top, left bottom, from(#989898), to(#7d7d7d));
+  background: linear-gradient(to bottom, #989898, #7d7d7d);
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.login__show-btn {
+  color: white;
+  text-decoration: none;
+
+  border-bottom: 1px dotted white;
+}
+
+.login__show-btn:hover,
+.login__show-btn:focus {
+  border-bottom: none;
+}
+
+.login__arrow {
+  margin-right: 2px;
+}
+
+.login__form--hidden {
+  display: none;
+}
+
+.login__form {
+  padding-top: 17px;
+  padding-bottom: 17px;
+
+  text-align: center;
+
+  border-bottom: 1px dotted white;
+}
+
+.login__item {
+  display: block;
+  float: left;
+  width: 184px;
+  height: 28px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 21px;
+
+  font-size: 25px;
+
+  border: none;
+  border-radius: 19px;
+  -webkit-box-shadow: inset 0 1px 5px 1px rgba(0, 0, 0, 0.75);
+          box-shadow: inset 0 1px 5px 1px rgba(0, 0, 0, 0.75);
+}
+
+.login__item:focus {
+  outline: none;
+}
+
+.login__item::-webkit-input-placeholder {
+  color: #cccccc;
+}
+
+.login__item:-ms-input-placeholder {
+  color: #cccccc;
+}
+
+.login__item::-ms-input-placeholder {
+  color: #cccccc;
+}
+
+.login__item::placeholder {
+  color: #cccccc;
+}
+
+.login__login {
+  margin-bottom: 26px;
+}
+
+.login__smb-btn {
+  width: 111px;
+  height: 26px;
+  margin-top: 34px;
+
+  font-weight: bold;
+  font-size: 15px;
+  text-shadow: 0 1px 0 rgb(255, 255, 255);
+
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffe553), to(#ff8a00));
+  background: linear-gradient(to bottom, #ffe553, #ff8a00);
+  border: none;
+  border-radius: 13px;
+  outline: none;
+  -webkit-box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.login__smb-btn:hover,
+.login__smb-btn:focus {
+  -webkit-box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Content */
+
+.content {
+  padding-top: 34px;
+  padding-right: 7px;
+  padding-bottom: 55px;
+
+  border-bottom: 1px dotted white;
+}
+
+.content__heading {
+  margin: 0;
+  margin-bottom: 21px;
+
+  font-weight: normal;
+  font-size: 20px;
+  text-shadow: 0 1px 0 rgb(255, 255, 255);
+}
+
+.content__text {
+  line-height: 14px;
+  color: white;
+}
+
+
+/* Footer */
+
+.footer {
+  padding-top: 35px;
+  padding-right: 91px;
+  padding-bottom: 32px;
+
+  text-align: right;
+}
+
+.footer__link {
+  color: white;
+}
+
+.footer__link:hover,
+.footer__link:focus {
+  color: #f5f5f5;
+}

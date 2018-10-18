@@ -1,67 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Test Work</title>
-    <link href="normalize.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>bellavindm_portfolio</title>
+	<link rel="stylesheet" type="text/css" href="style.css" >
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100|Roboto:100,300" rel="stylesheet">
 </head>
 <body>
-    <div class="wrapper">
-        <header class="user clearfix">
-            <img src="img/user-photo.jpg" alt="Фотография пользователя" class="user__photo">
-            <a href="#" class="user__name">Сергей Николаев</a>
-            <a href="#" class="user__settings">Настройки</a>
-            <a href="#" class="user__log-out">Выход</a>
-        </header>
-        <section class="login">
-            <div class="login__top">
-                <img class="login__arrow" src="img/arrow-up.png" alt="">
-                <a href="#" class="login__show-btn">свернуть поля ввода</a>
-            </div>
-            <form class="login__form clearfix" method="get" action="https://echo.htmlacademy.ru">
-                <input class="login__item login__login" name="login" placeholder="Логин" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required>
-                <input class="login__item login__pass" name="password" placeholder="Пароль" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{6,20}$" type="password" required>
-                <input class="login__smb-btn" type="submit" value="Войти">
-            </form>
-        </section>
-        <section class="content">
-            <h2 class="content__heading">Инструкция по применению</h2>
-            <p class="content__text">
-                Представляется логичным, что пустое подмножество программирует анормальный функциональный анализ, в итоге приходим к логическому противоречию. Математическое моделирование однозначно показывает, что точка перегиба создает разрыв функции, что и требовалось доказать. Тройной интеграл обуславливает невероятный интеграл Гамильтона, дальнейшие выкладки оставим студентам в качестве несложной домашней работы. Высшая арифметика, в первом приближении, концентрирует бином Ньютона, что известно даже школьникам. Интеграл от функции, имеющий конечный разрыв, не вдаваясь в подробности, определяет возрастающий вектор, дальнейшие выкладки оставим студентам в качестве несложной домашней работы.
-            </p>
-        </section>
-        <footer class="footer">
-            <a href="http://ekaterinburg.ur66.ru" class="footer__link">© Ural-Soft</a>
-        </footer>
-    </div>
-    <script type="text/javascript">
-        var showBtn = document.querySelector('.login__show-btn');
-        var arrowImg = document.querySelector('.login__arrow');
-        var form = document.querySelector('.login__form');
-
-        showBtn.addEventListener('click', function() {
-            form.classList.toggle('login__form--hidden');
-            if (form.classList.contains('login__form--hidden')) {
-                showBtn.textContent = 'показать поля ввода';
-                arrowImg.src = 'img/arrow-down.png';
-            } else {
-                showBtn.textContent = 'свернуть поля ввода';
-                arrowImg.src = 'img/arrow-up.png';
-            }
-        });
-
-        var loginInput = form.querySelector('.login__login');
-        var passInput = form.querySelector('.login__pass');
-
-        form.addEventListener('submit', function(evt) {
-            evt.preventDefault();
-            alert('Данные отправлены на сервер. ' +
-                loginInput.name + ': ' + loginInput.value + ' ' +
-                passInput.name + ': ' + passInput.value);
-                loginInput.value = '';
-                passInput.value = '';
-        });
-    </script>
+	<main class="content">
+		<section class="about-me">
+			<h1 class="about-me__title">
+				<a href="https://github.com/bellavindm" class="about-me__link" target="_blank">bellavin<span class="about-me__title--name">dm</span></a>
+			</h1>
+			<div class="about-me__profession">front-end developer</div>
+		</section>
+		<section class="my-works">
+			<h2 class="my-works__title">Portfolio</h2>
+			<ul class="my-works__items">
+				<li class="my-works__item my-works__item--sedona">
+					<a href="sedona/index.html" class="my-works__link"></a>
+				</li>
+				<li class="my-works__item my-works__item--technomart">
+					<a href="technomart/index.html" class="my-works__link"></a>
+				</li>
+			</ul>
+		</section>
+	</main>
 </body>
 </html>
