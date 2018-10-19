@@ -7,7 +7,7 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="container">
         <header class="user clearfix">
             <img src="img/user-photo.jpg" alt="Фотография пользователя" class="user__photo">
             <a href="#" class="user__name">Сергей Николаев</a>
@@ -20,8 +20,8 @@
                 <a href="#" class="login__show-btn">свернуть поля ввода</a>
             </div>
             <form class="login__form clearfix" method="get" action="https://echo.htmlacademy.ru">
-                <input class="login__item login__login" name="login" placeholder="Логин" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required>
-                <input class="login__item login__pass" name="password" placeholder="Пароль" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{6,20}$" type="password" required>
+                <input class="login__item login__login" name="login" placeholder="Логин" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title="Только латинские буквы и цифры. Начинатся должен с буквы. От одного до 20ти символов" required>
+                <input class="login__item login__pass" name="password" placeholder="Пароль" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{6,20}$" title="Только латинские буквы и цифры. Начинатся должен с буквы. От шести до 20ти символов" type="password" required>
                 <input class="login__smb-btn" type="submit" value="Войти">
             </form>
         </section>
