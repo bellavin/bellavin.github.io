@@ -21,11 +21,14 @@
 }
 
 body {
-  margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.4;
   background-color: #eee;
+}
+
+.main {
+  padding: 0 20px;
 }
 
 .card {
@@ -118,6 +121,25 @@ body {
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 768px) {
+  .card {
+    padding: 20px 30px;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .card__img {
+    width: 100%;
+  }
+  .card__content {
+    display: block;
+  }
+
+  .card__img-wrapper + .card__text-wrapper {
+    margin-left: 0;
+    margin-top: 17px;
+  }
+}
 
 /* Стили для readmore-js */
 .readmore-js-toggle, .readmore-js-section {
