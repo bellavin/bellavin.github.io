@@ -96,7 +96,7 @@ body {
 }
 
 .card__text {
-  max-height: 112px;
+  max-height: 106px;
   letter-spacing: 0.03em;
   font-size: 13px;
   overflow: hidden;
@@ -112,7 +112,7 @@ body {
 
 .card__read-more {
   display: block;
-  margin-top: 9px;
+  margin-top: 15px;
 }
 
 .link {
