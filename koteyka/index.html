@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Котейка</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="top-menu">
+        <div class="top-menu__inner container">
+          <div class="top-menu__logo"><a class="top-menu__logo-link" href="#"><img src="img/logo.svg" alt="" role="presentation"/></a>
+            <h1 class="visually-hidden">Гостиница для любимых кошек и котов</h1>
+            <button class="top-menu__mobile-toggle" type="button">
+            </button>
+          </div>
+          <ul class="top-menu__list">
+            <li class="top-menu__item"><a class="top-menu__link" href="#">Почему мы?</a>
+            </li>
+            <li class="top-menu__item"><a class="top-menu__link" href="#">Номера</a>
+            </li>
+            <li class="top-menu__item"><a class="top-menu__link" href="#">Отзывы</a>
+            </li>
+            <li class="top-menu__item"><a class="top-menu__link" href="#">Как нас найти</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="page-title container">
+        <h2 class="page-title__title">Наши номера
+        </h2>
+        <div class="sort">
+          <select class="sort__list customSelect">
+            <option class="sort__item">&#8593;  По площади
+            </option>
+            <option class="sort__item">&#8595;  По площади
+            </option>
+            <option class="sort__item">&#8593;  По цене
+            </option>
+            <option class="sort__item">&#8595;  По цене
+            </option>
+          </select>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main__inner container">
+        <aside class="main__aside">
+          <div class="filter">
+            <button class="filter__mobile-toggle">Фильтр
+            </button>
+            <form class="filter__form" method="get" action="https://echo.htmlacademy.ru">
+              <fieldset class="filter__fieldset filter__fieldset--price">
+                <legend class="filter__title">Цена за сутки,₽
+                </legend>
+                <div class="filter__price">
+                  <div class="filter__price-group">
+                    <label class="filter__label-num" for="filter-num-min">от
+                    </label><input class="filter__input-num" id="filter-num-min" type="number" value="100" name="min-price" min="0" max="99999"/>
+                  </div>
+                  <div class="filter__price-group">
+                    <label class="filter__label-num" for="filter-num-max">до
+                    </label><input class="filter__input-num" id="filter-num-max" type="number" value="600" name="max-price" min="0" max="99999"/>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="filter__fieldset">
+                <legend class="filter__title">Площадь
+                </legend>
+                <ul class="filter__list">
+                            <li class="filter__item">
+                              <input class="visually-hidden input-check" type="checkbox" name="filter-area" id="filter-063" value="0.63" checked>
+                              <label class="label-check" for="filter-063">0,63 м2</label>
+                            </li>
+                            <li class="filter__item">
+                              <input class="visually-hidden input-check" type="checkbox" name="filter-area" id="filter-090" value="0.9" checked>
+                              <label class="label-check" for="filter-090">0,90 м2</label>
+                            </li>
+                            <li class="filter__item">
+                              <input class="visually-hidden input-check" type="checkbox" name="filter-area" id="filter-113" value="1.13" checked>
+                              <label class="label-check" for="filter-113">1,13 м2</label>
+                            </li>
+                            <li class="filter__item">
+                              <input class="visually-hidden input-check" type="checkbox" name="filter-area" id="filter-156" value="1.56" checked>
+                              <label class="label-check" for="filter-156">1,56 м2</label>
+                            </li>
+                            <li class="filter__item">
+                              <input class="visually-hidden input-check" type="checkbox" name="filter-area" id="filter-256" value="2.56" checked>
+                              <label class="label-check" for="filter-256">2,56 м2</label>
+                            </li>
+                            <li class="filter__item">
+                              <input class="visually-hidden input-check" type="checkbox" name="filter-area" id="filter-257" value="2.56" checked>
+                              <label class="label-check" for="filter-257">2,56 м2</label>
+                            </li>
+                </ul>
+              </fieldset>
+              <fieldset class="filter__fieldset">
+                <legend class="filter__title">Оснащение номера
+                </legend>
+                <ul class="filter__list">
+                            <li class="filter__item">
+                              <input class="visually-hidden input-check" type="checkbox" name="filter-features" id="filter-empty" value="empty">
+                              <label class="label-check" for="filter-empty">Пустой номер</label>
+                            </li>
+                            <li class="filter__item">
+                              <input class="visually-hidden input-check" type="checkbox" name="filter-features" id="filter-bed" value="bed" checked>
+                              <label class="label-check" for="filter-bed">Лежак</label>
+                            </li>
+                            <li class="filter__item">
+                              <input class="visually-hidden input-check" type="checkbox" name="filter-features" id="filter-claw-point" value="claw-point" checked>
+                              <label class="label-check" for="filter-claw-point">Когтеточка</label>
+                            </li>
+                            <li class="filter__item">
+                              <input class="visually-hidden input-check" type="checkbox" name="filter-features" id="filter-game-complex" value="game-complex" checked>
+                              <label class="label-check" for="filter-game-complex">Игровой-комплекс</label>
+                            </li>
+                            <li class="filter__item">
+                              <input class="visually-hidden input-check" type="checkbox" name="filter-features" id="filter-house" value="house" checked>
+                              <label class="label-check" for="filter-house">Домик</label>
+                            </li>
+                </ul>
+              </fieldset>
+              <div class="filter__btns">
+                <button class="filter__btn filter__btn--submit" type="submin">Применить
+                </button>
+                <button class="filter__btn filter__btn--reset" type="reset">Сбросить фильтр
+                </button>
+              </div>
+            </form>
+          </div>
+        </aside>
+        <div class="main__content">
+          <section class="catalog">
+            <ul class="catalog__list">
+                        <li class="catalog__item">
+                          <div class="catalog__img-wrapper"><img src="/img/cat1.jpg" alt="" role="presentation"/>
+                          </div>
+                          <div class="catalog__text-wrapper">
+                            <h3 class="catalog__title"><a class="catalog__link" href="#">Эконом</a>
+                            </h3>
+                            <div class="catalog__desc">
+                              <div class="catalog__size">Размеры (ШхГхВ) - 90х70х180 см
+                              </div>
+                              <div class="catalog__area">Площадь - 0,63 м2
+                              </div>
+                              <div class="catalog__feature">
+                                <h4 class="catalog__feature-title">Оснащение номера
+                                </h4>
+                                <ul class="catalog__feature-list">
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features1"></use>
+                                    </svg>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="catalog__price">Цена за сутки:<span>100₽</span>
+                            </div>
+                            <button class="catalog__btn">Забронировать
+                            </button>
+                          </div>
+                        </li>
+                        <li class="catalog__item">
+                          <div class="catalog__img-wrapper"><img src="/img/cat2.jpg" alt="" role="presentation"/>
+                          </div>
+                          <div class="catalog__text-wrapper">
+                            <h3 class="catalog__title"><a class="catalog__link" href="#">Эконом плюс</a>
+                            </h3>
+                            <div class="catalog__desc">
+                              <div class="catalog__size">Размеры (ШхГхВ) - 90х100х180 см
+                              </div>
+                              <div class="catalog__area">Площадь - 0,90 м2
+                              </div>
+                              <div class="catalog__feature">
+                                <h4 class="catalog__feature-title">Оснащение номера
+                                </h4>
+                                <ul class="catalog__feature-list">
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features2"></use>
+                                    </svg>
+                                  </li>
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features3"></use>
+                                    </svg>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="catalog__price">Цена за сутки:<span>200₽</span>
+                            </div>
+                            <button class="catalog__btn">Забронировать
+                            </button>
+                          </div>
+                        </li>
+                        <li class="catalog__item">
+                          <div class="catalog__img-wrapper"><img src="/img/cat3.jpg" alt="" role="presentation"/>
+                          </div>
+                          <div class="catalog__text-wrapper">
+                            <h3 class="catalog__title"><a class="catalog__link" href="#">Комфорт</a>
+                            </h3>
+                            <div class="catalog__desc">
+                              <div class="catalog__size">Размеры (ШхГхВ) - 100х125х180 см
+                              </div>
+                              <div class="catalog__area">Площадь - 1,13 м2
+                              </div>
+                              <div class="catalog__feature">
+                                <h4 class="catalog__feature-title">Оснащение номера
+                                </h4>
+                                <ul class="catalog__feature-list">
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features2"></use>
+                                    </svg>
+                                  </li>
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features3"></use>
+                                    </svg>
+                                  </li>
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features4"></use>
+                                    </svg>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="catalog__price">Цена за сутки:<span>250₽</span>
+                            </div>
+                            <button class="catalog__btn">Забронировать
+                            </button>
+                          </div>
+                        </li>
+                        <li class="catalog__item">
+                          <div class="catalog__img-wrapper"><img src="/img/cat4.jpg" alt="" role="presentation"/>
+                          </div>
+                          <div class="catalog__text-wrapper">
+                            <h3 class="catalog__title"><a class="catalog__link" href="#">Сьют</a>
+                            </h3>
+                            <div class="catalog__desc">
+                              <div class="catalog__size">Размеры (ШхГхВ) - 125х125х180 см
+                              </div>
+                              <div class="catalog__area">Площадь - 1,56 м2
+                              </div>
+                              <div class="catalog__feature">
+                                <h4 class="catalog__feature-title">Оснащение номера
+                                </h4>
+                                <ul class="catalog__feature-list">
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features2"></use>
+                                    </svg>
+                                  </li>
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features3"></use>
+                                    </svg>
+                                  </li>
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features4"></use>
+                                    </svg>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="catalog__price">Цена за сутки:<span>350₽</span>
+                            </div>
+                            <button class="catalog__btn">Забронировать
+                            </button>
+                          </div>
+                        </li>
+                        <li class="catalog__item">
+                          <div class="catalog__img-wrapper"><img src="/img/cat5.jpg" alt="" role="presentation"/>
+                          </div>
+                          <div class="catalog__text-wrapper">
+                            <h3 class="catalog__title"><a class="catalog__link" href="#">Люкс</a>
+                            </h3>
+                            <div class="catalog__desc">
+                              <div class="catalog__size">Размеры (ШхГхВ) - 160х160х180 см
+                              </div>
+                              <div class="catalog__area">Площадь - 2,56 м2
+                              </div>
+                              <div class="catalog__feature">
+                                <h4 class="catalog__feature-title">Оснащение номера
+                                </h4>
+                                <ul class="catalog__feature-list">
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features2"></use>
+                                    </svg>
+                                  </li>
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features3"></use>
+                                    </svg>
+                                  </li>
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features4"></use>
+                                    </svg>
+                                  </li>
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features5"></use>
+                                    </svg>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="catalog__price">Цена за сутки:<span>500₽</span>
+                            </div>
+                            <button class="catalog__btn">Забронировать
+                            </button>
+                          </div>
+                        </li>
+                        <li class="catalog__item">
+                          <div class="catalog__img-wrapper"><img src="/img/cat6.jpg" alt="" role="presentation"/>
+                          </div>
+                          <div class="catalog__text-wrapper">
+                            <h3 class="catalog__title"><a class="catalog__link" href="#">Супер-Люкс</a>
+                            </h3>
+                            <div class="catalog__desc">
+                              <div class="catalog__size">Размеры (ШхГхВ) - 180х160х180 см
+                              </div>
+                              <div class="catalog__area">Площадь - 2,88 м2
+                              </div>
+                              <div class="catalog__feature">
+                                <h4 class="catalog__feature-title">Оснащение номера
+                                </h4>
+                                <ul class="catalog__feature-list">
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features2"></use>
+                                    </svg>
+                                  </li>
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features3"></use>
+                                    </svg>
+                                  </li>
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features4"></use>
+                                    </svg>
+                                  </li>
+                                  <li class="catalog__feature-item">
+                                    <svg width="16" height="16">
+                                      <use xlink:href="img/sprite.svg#icon-features5"></use>
+                                    </svg>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="catalog__price">Цена за сутки:<span>600₽</span>
+                            </div>
+                            <button class="catalog__btn">Забронировать
+                            </button>
+                          </div>
+                        </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="vendors/nativejs-select/nativejs-select.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
