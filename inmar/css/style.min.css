@@ -1291,21 +1291,21 @@ body {
   .home-catalog__title {
     margin-bottom: 10px;
   }
+  .home-catalog__item--left,
+  .home-catalog__subtitle--left {
+    padding-left: 70px;
+  }
+  .home-catalog__item--right,
+  .home-catalog__subtitle--right {
+    padding-right: 70px;
+  }
+}
+@media screen and (max-width: 1024px) {
   .home-catalog__img {
     display: none;
   }
   .home-catalog__item:last-child {
     display: none;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .home-catalog__item--left,
-  .home-catalog__subtitle--left {
-    padding-left: 100px;
-  }
-  .home-catalog__item--right,
-  .home-catalog__subtitle--right {
-    padding-right: 100px;
   }
 }
 @media screen and (max-width: 768px) {
