@@ -213,52 +213,68 @@ export const slideToggle = (target, duration = 500) => {
 
 export const homepage = () => {
 
-  const slider = document.querySelector('.home-facts__container');
+  const factsSlider = document.querySelector('.home-facts .swiper-container');
+  let factsSliderSwiper;
 
-  // let mySwiper = new Swiper(slider, {
-  // 	slidesPerView: 3,
-  // 	spaceBetween: 10,
-  // 	loop: true,
-  // 	pagination: {
-  // 		el: '.swiper-pagination',
-  // 		clickable: true,
-  // 	},
-  // 	navigation: {
-  // 		nextEl: '.swiper-button-next',
-  // 		prevEl: '.swiper-button-prev',
-  // 	},
-  // })
+  function factsMobileSlider() {
 
-  let mySwiper;
-
-  function mobileSlider() {
-    if (window.innerWidth <= 768 && slider.dataset.mobile == 'false') {
-      mySwiper = new Swiper(slider, {
-        slidesPerView: 1,
-        spaceBetween: 10,
+    if (window.innerWidth <= 768 && factsSlider.dataset.mobile == 'false') {
+      factsSliderSwiper = new Swiper(factsSlider, {
         loop: true,
-        // slideClass: 'card',
-        // pagination: {
-        // 	el: '.swiper-pagination',
-        // 	clickable: true,
-        // },
+        autoplay: {
+          delay: 5000,
+        }
       });
 
-      slider.dataset.mobile = 'true';
+      factsSlider.dataset.mobile = 'true';
     }
 
     if (window.innerWidth > 768) {
-      slider.dataset.mobile = 'false';
-      if (slider.classList.contains('swiper-container-initialized')) {
-        mySwiper.destroy();
+      factsSlider.dataset.mobile = 'false';
+      if (factsSlider.classList.contains('swiper-container-initialized')) {
+        factsSliderSwiper.destroy();
       }
     }
   }
 
-  mobileSlider()
+
+
+  const salesSlider = document.querySelector('.home-sales .swiper-container');
+  let salesSliderSwiper;
+
+  function salesMobileSlider() {
+
+    if (window.innerWidth <= 768 && salesSlider.dataset.mobile == 'false') {
+      salesSliderSwiper = new Swiper(salesSlider, {
+        loop: true,
+        autoplay: {
+          delay: 5000,
+        },
+        slidesPerView: 1,
+        breakpoints: {
+          540: {
+            slidesPerView: 2,
+          }
+        }
+      });
+
+      salesSlider.dataset.mobile = 'true';
+    }
+
+    if (window.innerWidth > 768) {
+      salesSlider.dataset.mobile = 'false';
+      if (salesSlider.classList.contains('swiper-container-initialized')) {
+        salesSliderSwiper.destroy();
+      }
+    }
+  }
+
+  factsMobileSlider();
+  salesMobileSlider();
 
   window.addEventListener('resize', () => {
-    mobileSlider();
+    factsMobileSlider();
+    salesMobileSlider();
   });
 
 }
