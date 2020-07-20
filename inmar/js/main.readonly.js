@@ -1,6 +1,7 @@
 import {forEachPolyfill} from './utils/polyfill-foreach';
 import {initIe11Download} from './utils/init-ie11-download';
 import {menu} from './utils/menu'
+import {homepage} from './modules/homepage'
 
 // Utils
 // ---------------------------------
@@ -13,6 +14,7 @@ menu(`.top-menu__nav`, `.top-menu__nav-toggle-burger`, `.top-menu__nav-toggle-ov
 
 // Modules
 // ---------------------------------
+homepage();
 
 const ie11Download = (el) => {
   if (el.href === ``) {
@@ -207,4 +209,56 @@ export const slideToggle = (target, duration = 500) => {
   } else {
     return slideUp(target, duration);
   }
+}
+
+export const homepage = () => {
+
+  const slider = document.querySelector('.home-facts__container');
+
+  // let mySwiper = new Swiper(slider, {
+  // 	slidesPerView: 3,
+  // 	spaceBetween: 10,
+  // 	loop: true,
+  // 	pagination: {
+  // 		el: '.swiper-pagination',
+  // 		clickable: true,
+  // 	},
+  // 	navigation: {
+  // 		nextEl: '.swiper-button-next',
+  // 		prevEl: '.swiper-button-prev',
+  // 	},
+  // })
+
+  let mySwiper;
+
+  function mobileSlider() {
+    if (window.innerWidth <= 768 && slider.dataset.mobile == 'false') {
+      mySwiper = new Swiper(slider, {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        // slideClass: 'card',
+        // pagination: {
+        // 	el: '.swiper-pagination',
+        // 	clickable: true,
+        // },
+      });
+
+      slider.dataset.mobile = 'true';
+    }
+
+    if (window.innerWidth > 768) {
+      slider.dataset.mobile = 'false';
+      if (slider.classList.contains('swiper-container-initialized')) {
+        mySwiper.destroy();
+      }
+    }
+  }
+
+  mobileSlider()
+
+  window.addEventListener('resize', () => {
+    mobileSlider();
+  });
+
 }
