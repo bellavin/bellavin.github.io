@@ -2,6 +2,7 @@ import {forEachPolyfill} from './utils/polyfill-foreach';
 import {initIe11Download} from './utils/init-ie11-download';
 import {menu} from './utils/menu'
 import {homepage} from './modules/homepage'
+import {productInner} from './modules/product-inner'
 
 // Utils
 // ---------------------------------
@@ -15,6 +16,7 @@ menu(`.top-menu__nav`, `.top-menu__nav-toggle-burger`, `.top-menu__nav-toggle-ov
 // Modules
 // ---------------------------------
 homepage();
+productInner();
 
 const ie11Download = (el) => {
   if (el.href === ``) {
@@ -217,22 +219,23 @@ export const homepage = () => {
   let factsSliderSwiper;
 
   function factsMobileSlider() {
+    if (factsSlider) {
+      if (window.innerWidth <= 768 && factsSlider.dataset.mobile == 'false') {
+        factsSliderSwiper = new Swiper(factsSlider, {
+          loop: true,
+          autoplay: {
+            delay: 5000,
+          }
+        });
 
-    if (window.innerWidth <= 768 && factsSlider.dataset.mobile == 'false') {
-      factsSliderSwiper = new Swiper(factsSlider, {
-        loop: true,
-        autoplay: {
-          delay: 5000,
+        factsSlider.dataset.mobile = 'true';
+      }
+
+      if (window.innerWidth > 768) {
+        factsSlider.dataset.mobile = 'false';
+        if (factsSlider.classList.contains('swiper-container-initialized')) {
+          factsSliderSwiper.destroy();
         }
-      });
-
-      factsSlider.dataset.mobile = 'true';
-    }
-
-    if (window.innerWidth > 768) {
-      factsSlider.dataset.mobile = 'false';
-      if (factsSlider.classList.contains('swiper-container-initialized')) {
-        factsSliderSwiper.destroy();
       }
     }
   }
@@ -243,28 +246,29 @@ export const homepage = () => {
   let salesSliderSwiper;
 
   function salesMobileSlider() {
-
-    if (window.innerWidth <= 768 && salesSlider.dataset.mobile == 'false') {
-      salesSliderSwiper = new Swiper(salesSlider, {
-        loop: true,
-        autoplay: {
-          delay: 5000,
-        },
-        slidesPerView: 1,
-        breakpoints: {
-          540: {
-            slidesPerView: 2,
+    if (salesSlider) {
+      if (window.innerWidth <= 768 && salesSlider.dataset.mobile == 'false') {
+        salesSliderSwiper = new Swiper(salesSlider, {
+          loop: true,
+          autoplay: {
+            delay: 5000,
+          },
+          slidesPerView: 1,
+          breakpoints: {
+            540: {
+              slidesPerView: 2,
+            }
           }
+        });
+
+        salesSlider.dataset.mobile = 'true';
+      }
+
+      if (window.innerWidth > 768) {
+        salesSlider.dataset.mobile = 'false';
+        if (salesSlider.classList.contains('swiper-container-initialized')) {
+          salesSliderSwiper.destroy();
         }
-      });
-
-      salesSlider.dataset.mobile = 'true';
-    }
-
-    if (window.innerWidth > 768) {
-      salesSlider.dataset.mobile = 'false';
-      if (salesSlider.classList.contains('swiper-container-initialized')) {
-        salesSliderSwiper.destroy();
       }
     }
   }
@@ -277,4 +281,16 @@ export const homepage = () => {
     salesMobileSlider();
   });
 
+}
+
+export const productInner = () => {
+  var mySwiper = new Swiper('.product-inner .swiper-container', {
+    loop: true,
+    slidesPerView: 4,
+
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  })
 }
