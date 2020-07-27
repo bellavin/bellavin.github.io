@@ -34,7 +34,7 @@
                   </li>
                   <li class="top-menu__nav-item"><a class="top-menu__nav-link" href="about.html">О компании</a>
                   </li>
-                  <li class="top-menu__nav-item"><a class="top-menu__nav-link" href="#">Продукция</a>
+                  <li class="top-menu__nav-item"><a class="top-menu__nav-link" href="product.html">Продукция</a>
                   </li>
                   <li class="top-menu__nav-item"><a class="top-menu__nav-link" href="portfolio.html">Портфолио</a>
                   </li>
@@ -80,7 +80,122 @@
             </div>
           </div>
         </aside>
-        <div class="main__content"></div>
+        <div class="main__content">
+          <div class="cart">
+            <div class="bread">
+              <ul class="bread__list list-reset">
+                <li class="bread__item"><a class="bread__link" href="#">Главная</a>
+                </li>
+                <li class="bread__item"><span class="bread__link">Корзина</span>
+                </li>
+              </ul>
+            </div>
+            <h2 class="page-title">Корзина
+            </h2>
+            <div class="cart__top">
+              <div class="cart__top-desc">Вы добавили в корзину 4 товара
+              </div><a class="cart__top-btn btn" href="product.html">Продолжить покупки</a>
+            </div>
+            <div class="cart__table-wrapper">
+              <table class="cart__table">
+                <tr class="cart__tr">
+                  <th class="cart__th">Товар
+                  </th>
+                  <th class="cart__th">Количество
+                  </th>
+                  <th class="cart__th">Цена за ед
+                  </th>
+                  <th class="cart__th">Сумма
+                  </th>
+                </tr>
+                          <tr class="cart__tr">
+                            <td class="cart__td"><a class="cart__product-link" href="product-inner.html"><span class="cart__product-img"><img src="img/content/cart-content.jpg"></span><span class="cart__product-name">ArmorLine PU из полиуретана Комплект №1</span></a>
+                            </td>
+                            <td class="cart__td">
+                              <div class="cart__table-toggles js-cart-toggles">
+                                <button class="cart__table-toggle cart__table-toggle--minus btn-reset js-cart-toggle-minus">-
+                                </button><input class="cart__amount js-cart-amount" type="number" value="2"/>
+                                <button class="cart__table-toggle cart__table-toggle--plus btn-reset js-cart-toggle-plus">+
+                                </button>
+                              </div>
+                            </td>
+                            <td class="cart__td cart__td--cost">1 200 Р/шт
+                            </td>
+                            <td class="cart__td cart__td--price">2400 Р
+                            </td>
+                          </tr>
+                          <tr class="cart__tr">
+                            <td class="cart__td"><a class="cart__product-link" href="product-inner.html"><span class="cart__product-img"><img src="img/content/cart-content.jpg"></span><span class="cart__product-name">ArmorLine PU из полиуретана Комплект №1</span></a>
+                            </td>
+                            <td class="cart__td">
+                              <div class="cart__table-toggles js-cart-toggles">
+                                <button class="cart__table-toggle cart__table-toggle--minus btn-reset js-cart-toggle-minus">-
+                                </button><input class="cart__amount js-cart-amount" type="number" value="1"/>
+                                <button class="cart__table-toggle cart__table-toggle--plus btn-reset js-cart-toggle-plus">+
+                                </button>
+                              </div>
+                            </td>
+                            <td class="cart__td cart__td--cost">6 700 Р/шт
+                            </td>
+                            <td class="cart__td cart__td--price">6 700 Р
+                            </td>
+                          </tr>
+                          <tr class="cart__tr">
+                            <td class="cart__td"><a class="cart__product-link" href="product-inner.html"><span class="cart__product-img"><img src="img/content/cart-content.jpg"></span><span class="cart__product-name">ArmorLine PU из полиуретана Комплект №1</span></a>
+                            </td>
+                            <td class="cart__td">
+                              <div class="cart__table-toggles js-cart-toggles">
+                                <button class="cart__table-toggle cart__table-toggle--minus btn-reset js-cart-toggle-minus" disabled="disabled">-
+                                </button><input class="cart__amount js-cart-amount" type="number" value="0"/>
+                                <button class="cart__table-toggle cart__table-toggle--plus btn-reset js-cart-toggle-plus">+
+                                </button>
+                              </div>
+                            </td>
+                            <td class="cart__td cart__td--cost">0 Р/шт
+                            </td>
+                            <td class="cart__td cart__td--price">0 Р
+                            </td>
+                          </tr>
+                          <tr class="cart__tr">
+                            <td class="cart__td"><a class="cart__product-link" href="product-inner.html"><span class="cart__product-img"><img src="img/content/cart-content.jpg"></span><span class="cart__product-name">ArmorLine PU из полиуретана Комплект №1</span></a>
+                            </td>
+                            <td class="cart__td">
+                              <div class="cart__table-toggles js-cart-toggles">
+                                <button class="cart__table-toggle cart__table-toggle--minus btn-reset js-cart-toggle-minus">-
+                                </button><input class="cart__amount js-cart-amount" type="number" value="2"/>
+                                <button class="cart__table-toggle cart__table-toggle--plus btn-reset js-cart-toggle-plus">+
+                                </button>
+                              </div>
+                            </td>
+                            <td class="cart__td cart__td--cost">8 100 Р/шт
+                            </td>
+                            <td class="cart__td cart__td--price">8 100 Р
+                            </td>
+                          </tr>
+              </table>
+            </div>
+            <div class="cart__total">
+              <div class="cart__total-text">Итого:
+              </div>
+              <div class="cart__total-price">23 400 Р
+              </div>
+            </div>
+            <div class="cart__bottom">
+              <div class="cart__bottom-left"><input class="cart__promo-input" placeholder="Введите промокод" type="text"/>
+                <button class="cart__promo-btn btn btn-reset">Применить
+                </button>
+              </div>
+              <div class="cart__bottom-right">
+                <div class="cart__bottom-old-price">23 400 Р
+                </div>
+                <div class="cart__bottom-price">21 120 Р
+                </div>
+                <button class="cart__bottom-btn btn btn-reset">Оплатить
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <footer>
@@ -107,9 +222,9 @@
             </ul>
           </div>
           <div class="footer__right">
-            <div class="footer__left-links"><a class="footer__link" href="#">Главная</a><a class="footer__link" href="#">О компании</a><a class="footer__link" href="#">Каталог</a><a class="footer__link" href="#">Примеры работ</a><a class="footer__link" href="#">Акции и скидки</a><a class="footer__link" href="#">Доставка и оплата</a><a class="footer__link" href="blog.html">Блог</a><a class="footer__link" href="#">Контакты</a>
+            <div class="footer__left-links"><a class="footer__link" href="index.html">Главная</a><a class="footer__link" href="about.html">О компании</a><a class="footer__link" href="product.html">Каталог</a><a class="footer__link" href="portfolio.html">Примеры работ</a><a class="footer__link" href="sales.html">Акции и скидки</a><a class="footer__link" href="order.html">Доставка и оплата</a><a class="footer__link" href="blog.html">Блог</a><a class="footer__link" href="#">Контакты</a>
             </div>
-            <div class="footer__right-links"><a class="footer__link" href="#">Пользовательское соглашение</a><a class="footer__link" href="#">Политика конфиденциальности</a><a class="footer__link footer__link--offer" href="#">Публичная оферта</a><a class="footer__link" href="#">Все права защищены © 2020</a><a class="footer__link" href="#">Разработка и продвиение InMar</a>
+            <div class="footer__right-links"><a class="footer__link" href="#">Пользовательское соглашение</a><a class="footer__link" href="#">Политика конфиденциальности</a><a class="footer__link footer__link--offer" href="offer.html">Публичная оферта</a><a class="footer__link" href="#">Все права защищены © 2020</a><a class="footer__link" href="#">Разработка и продвиение InMar</a>
             </div>
           </div>
         </div>

@@ -1,8 +1,10 @@
 import {forEachPolyfill} from './utils/polyfill-foreach';
 import {initIe11Download} from './utils/init-ie11-download';
-import {menu} from './utils/menu'
-import {homepage} from './modules/homepage'
-import {productInner} from './modules/product-inner'
+import {menu} from './utils/menu';
+import {homepage} from './modules/homepage';
+import {productInner} from './modules/product-inner';
+import {order} from './modules/order';
+import {cart} from './modules/cart';
 
 // Utils
 // ---------------------------------
@@ -17,6 +19,8 @@ menu(`.top-menu__nav`, `.top-menu__nav-toggle-burger`, `.top-menu__nav-toggle-ov
 // ---------------------------------
 homepage();
 productInner();
+order();
+cart();
 
 const ie11Download = (el) => {
   if (el.href === ``) {
@@ -213,6 +217,35 @@ export const slideToggle = (target, duration = 500) => {
   }
 }
 
+export const cart = () => {
+  const cartElem = document.querySelector(`.cart`);
+
+  if (cartElem) {
+    const cartTogglesElems = document.querySelectorAll(`.js-cart-toggles`);
+    cartTogglesElems.forEach((elem) => {
+      const DISABLED_TOGGLE_CLASS_NAME = ``;
+      const minusELem = elem.querySelector(`.js-cart-toggle-minus`);
+      const plusELem = elem.querySelector(`.js-cart-toggle-plus`);
+      const ammountElem = elem.querySelector(`.js-cart-amount`);
+
+      minusELem.addEventListener(`click`, () => {
+        if (ammountElem.value > 0) {
+          ammountElem.value -= 1;
+        } else {
+          minusELem.classList.add(DISABLED_TOGGLE_CLASS_NAME);
+        }
+      });
+
+      plusELem.addEventListener(`click`, () => {
+        if (minusELem.classList.contains(DISABLED_TOGGLE_CLASS_NAME)) {
+          minusELem.classList.remove(DISABLED_TOGGLE_CLASS_NAME)
+        }
+        ammountElem.value = parseInt(ammountElem.value) + 1;
+      });
+    });
+  }
+}
+
 export const homepage = () => {
 
   const factsSlider = document.querySelector('.home-facts .swiper-container');
@@ -283,47 +316,90 @@ export const homepage = () => {
 
 }
 
-export const productInner = () => {
-  var mySwiper = new Swiper(`.product-inner .swiper-container`, {
-    loop: true,
-    slidesPerView: 1,
-    navigation: {
-      nextEl: `.swiper-button-next`,
-      prevEl: `.swiper-button-prev`,
-    },
-    breakpoints: {
+export const order = () => {
+  const orderElem = document.querySelector(`.order`);
 
-      500: {
-        slidesPerView: 2,
-      },
-      768: {
-        slidesPerView: 3,
-      },
-      1024: {
-        slidesPerView: 4,
+  if (orderElem) {
+    const togglePersonElem = orderElem.querySelector(`.js-order-toggle-person`);
+    const toggleCompanyElem = orderElem.querySelector(`.js-order-toggle-company`);
+    const formPersonElem = orderElem.querySelector(`.js-order-form-person`);
+    const formCompanyElem = orderElem.querySelector(`.js-order-form-company`);
+
+    console.log(togglePersonElem);
+
+
+
+    const openPersonForm = () => {
+      if(togglePersonElem.checked) {
+        formPersonElem.classList.add(`active`);
+
+        formCompanyElem.classList.remove(`active`)
       }
     }
-  });
 
+    const openCompanyForm = () => {
+      if(toggleCompanyElem.checked) {
+        formCompanyElem.classList.add(`active`);
 
-
-  const setPrice = () => {
-    const formElem = document.querySelector(`.js-product-inner-form`);
-    const radioElems = formElem.querySelectorAll(`.js-product-inner-radio`);
-    const priceElem = formElem.querySelector(`.js-product-inner-price`);
-
-    const updatePrice = () => {
-      const radioElem = [...radioElems].filter((elem) => elem.checked)[0];
-      priceElem.textContent = radioElem.value.toLocaleString('ru-RU') + ` Р`;
+        formPersonElem.classList.remove(`active`)
+      }
     }
 
-    if (formElem) {
-      updatePrice();
-      formElem.addEventListener(`change`, () => {
-        updatePrice();
-      });
-    }
+    toggleCompanyElem.addEventListener(`change`, () => {
+      openCompanyForm();
+    });
+
+    togglePersonElem.addEventListener(`change`, () => {
+      openPersonForm();
+    });
+
   }
+}
 
-  setPrice();
+export const productInner = () => {
+  const productInnerElem = document.querySelector(`.product-inner`);
+
+  if (productInnerElem) {
+    var mySwiper = new Swiper(`.product-inner .swiper-container`, {
+      loop: true,
+      slidesPerView: 1,
+      navigation: {
+        nextEl: `.swiper-button-next`,
+        prevEl: `.swiper-button-prev`,
+      },
+      breakpoints: {
+
+        500: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+        }
+      }
+    });
+
+
+    const setPrice = () => {
+      const formElem = document.querySelector(`.js-product-inner-form`);
+      const radioElems = formElem.querySelectorAll(`.js-product-inner-radio`);
+      const priceElem = formElem.querySelector(`.js-product-inner-price`);
+
+      const updatePrice = () => {
+        const radioElem = [...radioElems].filter((elem) => elem.checked)[0];
+        priceElem.textContent = radioElem.value.toLocaleString('ru-RU') + ` Р`;
+      }
+
+      if (formElem) {
+        updatePrice();
+        formElem.addEventListener(`change`, () => {
+          updatePrice();
+        });
+      }
+    }
+
+    setPrice();
+  }
 }
