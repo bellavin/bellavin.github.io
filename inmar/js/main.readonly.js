@@ -223,7 +223,6 @@ export const cart = () => {
   if (cartElem) {
     const cartTogglesElems = document.querySelectorAll(`.js-cart-toggles`);
     cartTogglesElems.forEach((elem) => {
-      const DISABLED_TOGGLE_CLASS_NAME = ``;
       const minusELem = elem.querySelector(`.js-cart-toggle-minus`);
       const plusELem = elem.querySelector(`.js-cart-toggle-plus`);
       const ammountElem = elem.querySelector(`.js-cart-amount`);
@@ -231,16 +230,27 @@ export const cart = () => {
       minusELem.addEventListener(`click`, () => {
         if (ammountElem.value > 0) {
           ammountElem.value -= 1;
-        } else {
-          minusELem.classList.add(DISABLED_TOGGLE_CLASS_NAME);
+        }
+
+        if (ammountElem.value <= 0) {
+          minusELem.setAttribute(`disabled`, true);
         }
       });
 
       plusELem.addEventListener(`click`, () => {
-        if (minusELem.classList.contains(DISABLED_TOGGLE_CLASS_NAME)) {
-          minusELem.classList.remove(DISABLED_TOGGLE_CLASS_NAME)
+        if (minusELem.hasAttribute(`disabled`) && ammountElem.value >= 0) {
+          minusELem.removeAttribute(`disabled`)
         }
         ammountElem.value = parseInt(ammountElem.value) + 1;
+      });
+
+      ammountElem.addEventListener(`change`, () => {
+        if (ammountElem.value <= 0) {
+          ammountElem.value = 0;
+          minusELem.setAttribute(`disabled`, true);
+        } else if (minusELem.hasAttribute(`disabled`)) {
+          minusELem.removeAttribute(`disabled`);
+        }
       });
     });
   }
