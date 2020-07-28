@@ -989,8 +989,8 @@ body {
 }
 .main__aside {
   flex-basis: 142px;
-  border: 1px solid white;
-  border-top: 0;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
   flex-shrink: 0;
 }
 @media screen and (max-width: 1024px) {
@@ -1009,6 +1009,7 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1920px;
+  max-width: 1440px;
   min-width: 320px;
   box-sizing: border-box;
 }
@@ -2445,6 +2446,10 @@ body {
 }
 .blog__bn3r img {
   display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .blog__list {
   padding-top: 55px;
@@ -2860,6 +2865,10 @@ body {
 }
 .portfolio__bn3r img {
   display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .portfolio__list {
   padding-top: 36px;
@@ -3619,6 +3628,78 @@ body {
   .cart__bottom-btn {
     margin-top: 10px;
     margin-left: 0;
+  }
+}
+.contacts__map {
+  margin-top: 32px;
+}
+.contacts__map img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.contacts__bottom {
+  padding: 41px 74px 34px;
+  display: flex;
+  font-size: 17px;
+  font-weight: 300;
+}
+.contacts__bottom-right {
+  margin-left: 191px;
+}
+.contacts__tel {
+  margin-top: 17px;
+}
+.contacts__title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: inherit;
+}
+.contacts__text {
+  text-decoration: none;
+  color: inherit;
+}
+.contacts__tel-link {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  color: #a1322c;
+  text-decoration: none;
+}
+.contacts__btn {
+  width: 217px;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: uppercase;
+  background-color: #a1322c;
+  border-color: #a1322c;
+}
+@media screen and (max-width: 1440px) {
+  .contacts__bottom {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .contacts__bottom-right {
+    margin-left: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contacts__bottom {
+    display: block;
+  }
+  .contacts__bottom-left,
+  .contacts__bottom-right {
+    text-align: center;
+  }
+  .contacts__email {
+    margin-top: 17px;
+  }
+  .contacts__btn {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .error-404 {
