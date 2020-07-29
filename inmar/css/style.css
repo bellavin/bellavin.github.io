@@ -964,6 +964,18 @@ input:matches([type="email"],
      -moz-appearance: none;
           appearance: none;
 }
+video::-webkit-media-controls-panel {
+  display: none!important;
+  -webkit-appearance: none;
+}
+video::-webkit-media-controls-play-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+video::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
 body {
   font-family: Raleway, Arial, sans-serif;
   font-size: 17px;
