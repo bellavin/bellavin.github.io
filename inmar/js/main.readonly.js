@@ -5,6 +5,7 @@ import {homepage} from './modules/homepage';
 import {productInner} from './modules/product-inner';
 import {order} from './modules/order';
 import {cart} from './modules/cart';
+import {contacts} from './modules/contacts';
 
 // Utils
 // ---------------------------------
@@ -21,6 +22,7 @@ homepage();
 productInner();
 order();
 cart();
+contacts();
 
 const ie11Download = (el) => {
   if (el.href === ``) {
@@ -253,6 +255,55 @@ export const cart = () => {
         }
       });
     });
+  }
+}
+
+export const contacts = () => {
+  const modal1 = document.querySelector(`.js-contacts-modal-1`);
+  const modal2 = document.querySelector(`.js-contacts-modal-2`);
+
+  const modal1OpenBtn = document.querySelector(`.js-contacts-modal-opener-1`);
+  const modal2OpenBtn = document.querySelector(`.js-contacts-modal-opener-2`);
+
+  const setModalEvents = (modalElem, openBtnElem, modalClassName) => {
+    const overlayElem = modalElem.querySelector(`.js-modal-overlay`);
+    const closeBtnElem = modalElem.querySelector(`.js-modal-close`);
+
+    const openModalHandler = () => {
+      if (modalElem) {
+        modalElem.classList.add(modalClassName);
+        document.addEventListener(`keydown`, escKeyDownHandler);
+      }
+    };
+
+    const closeModalHandler = () => {
+        modalElem.classList.remove(modalClassName);
+        document.removeEventListener(`keydown`, escKeyDownHandler);
+    };
+
+    const escKeyDownHandler = (evt) => {
+      if (evt.key === `Escape` || evt.key === `Esc`) {
+        closeModalHandler();
+      }
+    };
+
+    openBtnElem.addEventListener(`click`, () => {
+      openModalHandler();
+    });
+    overlayElem.addEventListener(`click`, () => {
+      closeModalHandler();
+    });
+    closeBtnElem.addEventListener(`click`, () => {
+      closeModalHandler();
+    });
+  }
+
+  if (modal1 && modal1OpenBtn) {
+    setModalEvents(modal1, modal1OpenBtn, `modal--open`);
+  }
+
+  if (modal2 && modal1OpenBtn) {
+    setModalEvents(modal2, modal2OpenBtn, `modal--open`);
   }
 }
 
