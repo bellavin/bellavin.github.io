@@ -2843,6 +2843,22 @@ a:focus {
   color: #a1322c;
   background-color: white;
 }
+.catalog__more-btn {
+  display: block;
+  width: 217px;
+  margin: 50px auto 0;
+  font-size: 14px;
+  color: #a1322c;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid #a1322c;
+}
+.catalog__more-btn:hover,
+.catalog__more-btn:focus {
+  color: white;
+  background-color: #a1322c;
+}
 .catalog__bottom {
   padding-top: 30px;
   padding-bottom: 46px;
@@ -3028,14 +3044,62 @@ a:focus {
   padding-left: 5px;
   box-sizing: border-box;
 }
-.portfolio-inner__item img {
+.portfolio-inner__item:first-child {
+  flex-basis: 100%;
+}
+.portfolio-inner__link {
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1px;
+  transition: transform 0.3s;
+}
+.portfolio-inner__link:hover,
+.portfolio-inner__link:focus {
+  transform: scale(1.01);
+}
+.portfolio-inner__link img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
 }
-.portfolio-inner__item:first-child {
-  flex-basis: 100%;
+.portfolio-inner .modal__content {
+  padding: 50px 50px 15px;
+  max-width: 80vw;
+  max-height: 80vh;
+  overflow: hidden;
+}
+.portfolio-inner .modal__slider-item {
+  height: initial;
+}
+.portfolio-inner .modal img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  display: block;
+}
+@media screen and (max-width: 1024px) {
+  .portfolio-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .portfolio-inner__item:first-child,
+  .portfolio-inner__item {
+    flex-basis: 50%;
+  }
+}
+@media screen and (max-width: 540px) {
+  .portfolio-inner__item:first-child,
+  .portfolio-inner__item {
+    flex-basis: 100%;
+  }
 }
 .product {
   padding-bottom: 47px;
@@ -3764,9 +3828,9 @@ a:focus {
 }
 .modal__content {
   position: absolute;
-  top: 20px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   box-sizing: border-box;
   margin: 0 auto;
   padding: 30px 35px;
@@ -3825,6 +3889,16 @@ a:focus {
   text-transform: uppercase;
   border: 1px solid #a1322c;
   background-color: #a1322c;
+}
+.modal__btns {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 50px;
+  right: 50px;
+  background-color: white;
 }
 .error-404 {
   padding: 20px;
