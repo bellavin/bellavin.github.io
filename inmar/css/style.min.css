@@ -2789,9 +2789,6 @@ a:focus {
     margin-left: 0;
   }
 }
-.catalog {
-  padding-right: 60px;
-}
 .catalog__bn3r img {
   display: block;
   width: 100%;
@@ -3761,9 +3758,6 @@ a:focus {
     margin-top: 10px;
     margin-left: 0;
   }
-}
-.contacts {
-  padding-right: 120px;
 }
 .contacts__map {
   margin-top: 32px;
