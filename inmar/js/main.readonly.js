@@ -6,6 +6,7 @@ import {productInner} from './modules/product-inner';
 import {order} from './modules/order';
 import {cart} from './modules/cart';
 import {contacts} from './modules/contacts';
+import {portfolioInner} from './modules/portfolio-inner';
 
 // Utils
 // ---------------------------------
@@ -23,6 +24,7 @@ productInner();
 order();
 cart();
 contacts();
+portfolioInner();
 
 const ie11Download = (el) => {
   if (el.href === ``) {
@@ -151,71 +153,49 @@ const enableScrolling = () =>{
 
 export {enableScrolling, disableScrolling};
 
-export const slideUp = (target, duration) => {
-  target.style.transitionProperty = 'height, margin, padding';
-  target.style.transitionDuration = duration + 'ms';
-  target.style.boxSizing = 'border-box';
-  target.style.height = target.offsetHeight + 'px';
+export const setModalEvents = (modalElem, openBtnElem, modalClassName) => {
+  const overlayElem = modalElem.querySelector(`.js-modal-overlay`);
+  const closeBtnElem = modalElem.querySelector(`.js-modal-close`);
 
-  target.style.height = 0;
-  target.style.paddingTop = 0;
-  target.style.paddingBottom = 0;
-  target.style.marginTop = 0;
-  target.style.marginBottom = 0;
-  target.style.overflow = 'hidden';
+  const openModalHandler = () => {
+    if (modalElem) {
+      modalElem.classList.add(modalClassName);
+      document.addEventListener(`keydown`, escKeyDownHandler);
+    }
+  };
 
-  window.setTimeout( () => {
-    target.style.display = 'none'; /* [8] */
-    target.style.removeProperty('height'); /* [9] */
-    target.style.removeProperty('padding-top');  /* [10.1] */
-    target.style.removeProperty('padding-bottom');  /* [10.2] */
-    target.style.removeProperty('margin-top');  /* [11.1] */
-    target.style.removeProperty('margin-bottom');  /* [11.2] */
-    target.style.removeProperty('overflow');  /* [12] */
-    target.style.removeProperty('transition-duration');  /* [13.1] */
-    target.style.removeProperty('transition-property');  /* [13.2] */
-  }, duration);
-}
+  const closeModalHandler = () => {
+      modalElem.classList.remove(modalClassName);
+      document.removeEventListener(`keydown`, escKeyDownHandler);
+  };
 
+  const escKeyDownHandler = (evt) => {
+    if (evt.key === `Escape` || evt.key === `Esc`) {
+      closeModalHandler();
+    }
+  };
 
-export const slideDown = (target, duration) => {
-  target.style.removeProperty('display');
-  let display = window.getComputedStyle(target).display;
-  if (display === 'none') {
-    display = 'block';
+  if (openBtnElem) {
+    openBtnElem.addEventListener(`click`, (evt) => {
+      evt.preventDefault();
+      openModalHandler();
+    });
   }
-  target.style.display = display;
 
-  let height = target.offsetHeight;
-  target.style.height = 0;
-  target.style.paddingTop = 0;
-  target.style.paddingBottom = 0;
-  target.style.marginTop = 0;
-  target.style.marginBottom = 0;
-  target.style.overflow = 'hidden';
 
-  target.style.boxSizing = 'border-box';
-  target.style.transitionProperty = "height, margin, padding";
-  target.style.transitionDuration = duration + 'ms';
-  target.style.height = height + 'px';
-  target.style.removeProperty('padding-top');
-  target.style.removeProperty('padding-bottom');
-  target.style.removeProperty('margin-top');
-  target.style.removeProperty('margin-bottom');
+  if (overlayElem) {
+    overlayElem.addEventListener(`click`, (evt) => {
+      evt.preventDefault();
+      closeModalHandler();
+    });
+  }
 
-  window.setTimeout( () => {
-    target.style.removeProperty('height'); /* [13] */
-    target.style.removeProperty('overflow'); /* [14] */
-    target.style.removeProperty('transition-duration'); /* [15.1] */
-    target.style.removeProperty('transition-property'); /* [15.2] */
-  }, duration);
-}
 
-export const slideToggle = (target, duration = 500) => {
-  if (window.getComputedStyle(target).display === 'none') {
-    return slideDown(target, duration);
-  } else {
-    return slideUp(target, duration);
+  if (closeBtnElem) {
+    closeBtnElem.addEventListener(`click`, (evt) => {
+      evt.preventDefault();
+      closeModalHandler();
+    });
   }
 }
 
@@ -258,6 +238,8 @@ export const cart = () => {
   }
 }
 
+import {setModalEvents} from '../utils/set-modal-events';
+
 export const contacts = () => {
   const modal1 = document.querySelector(`.js-contacts-modal-1`);
   const modal2 = document.querySelector(`.js-contacts-modal-2`);
@@ -265,38 +247,7 @@ export const contacts = () => {
   const modal1OpenBtn = document.querySelector(`.js-contacts-modal-opener-1`);
   const modal2OpenBtn = document.querySelector(`.js-contacts-modal-opener-2`);
 
-  const setModalEvents = (modalElem, openBtnElem, modalClassName) => {
-    const overlayElem = modalElem.querySelector(`.js-modal-overlay`);
-    const closeBtnElem = modalElem.querySelector(`.js-modal-close`);
 
-    const openModalHandler = () => {
-      if (modalElem) {
-        modalElem.classList.add(modalClassName);
-        document.addEventListener(`keydown`, escKeyDownHandler);
-      }
-    };
-
-    const closeModalHandler = () => {
-        modalElem.classList.remove(modalClassName);
-        document.removeEventListener(`keydown`, escKeyDownHandler);
-    };
-
-    const escKeyDownHandler = (evt) => {
-      if (evt.key === `Escape` || evt.key === `Esc`) {
-        closeModalHandler();
-      }
-    };
-
-    openBtnElem.addEventListener(`click`, () => {
-      openModalHandler();
-    });
-    overlayElem.addEventListener(`click`, () => {
-      closeModalHandler();
-    });
-    closeBtnElem.addEventListener(`click`, () => {
-      closeModalHandler();
-    });
-  }
 
   if (modal1 && modal1OpenBtn) {
     setModalEvents(modal1, modal1OpenBtn, `modal--open`);
@@ -414,6 +365,74 @@ export const order = () => {
       openPersonForm();
     });
 
+  }
+}
+
+export const portfolioInner = () => {
+  const modalElem = document.querySelector(`.js-portfolio-modal`);
+  const modalOpenBtns = document.querySelectorAll(`.js-portfolio-modal-opener`);
+  const MODAL_CLASS_NAME = `modal--open`;
+  let slider;
+
+
+  if (modalElem && modalOpenBtns) {
+    modalOpenBtns.forEach((btn, index) => {
+
+      const overlayElem = modalElem.querySelector(`.js-modal-overlay`);
+      const closeBtnElem = modalElem.querySelector(`.js-modal-close`);
+
+      const openModalHandler = () => {
+        if (modalElem) {
+          modalElem.classList.add(MODAL_CLASS_NAME);
+          document.addEventListener(`keydown`, escKeyDownHandler);
+
+          slider = new Swiper(modalElem.querySelector(`.swiper-container`), {
+            loop: true,
+            navigation: {
+              nextEl: `.swiper-button-next`,
+              prevEl: `.swiper-button-prev`,
+            },
+          });
+          slider.slideTo(index + 1, 0);
+        }
+      };
+
+      const closeModalHandler = () => {
+          modalElem.classList.remove(MODAL_CLASS_NAME);
+          document.removeEventListener(`keydown`, escKeyDownHandler);
+
+          slider.destroy();
+      };
+
+      const escKeyDownHandler = (evt) => {
+        if (evt.key === `Escape` || evt.key === `Esc`) {
+          closeModalHandler();
+        }
+      };
+
+      if (btn) {
+        btn.addEventListener(`click`, (evt) => {
+          evt.preventDefault();
+          openModalHandler();
+        });
+      }
+
+
+      if (overlayElem) {
+        overlayElem.addEventListener(`click`, (evt) => {
+          evt.preventDefault();
+          closeModalHandler();
+        });
+      }
+
+
+      if (closeBtnElem) {
+        closeBtnElem.addEventListener(`click`, (evt) => {
+          evt.preventDefault();
+          closeModalHandler();
+        });
+      }
+    });
   }
 }
 

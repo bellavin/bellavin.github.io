@@ -2452,6 +2452,9 @@ a:focus {
     padding-left: 0;
   }
 }
+.blog {
+  padding-bottom: 119px;
+}
 .blog__bn3r {
   padding-bottom: 25px;
 }
@@ -2464,7 +2467,6 @@ a:focus {
 }
 .blog__list {
   padding-top: 55px;
-  padding-bottom: 119px;
 }
 .blog__item {
   display: flex;
@@ -2543,6 +2545,22 @@ a:focus {
   text-transform: uppercase;
   text-decoration: none;
   border: 1px solid;
+}
+.blog__more-btn {
+  display: block;
+  width: 217px;
+  margin: 50px auto 0;
+  font-size: 14px;
+  color: #a1322c;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid #a1322c;
+}
+.blog__more-btn:hover,
+.blog__more-btn:focus {
+  color: white;
+  background-color: #a1322c;
 }
 @media screen and (max-width: 768px) {
   .blog__item,
@@ -2669,9 +2687,11 @@ a:focus {
     margin-left: 0px;
   }
 }
+.sales {
+  padding-bottom: 30px;
+}
 .sales__list {
   padding-top: 32px;
-  padding-bottom: 10px;
 }
 .sales__item {
   position: relative;
@@ -2746,6 +2766,17 @@ a:focus {
   text-transform: uppercase;
   text-decoration: none;
   border: 1px solid;
+}
+.sales__more-btn {
+  display: block;
+  width: 217px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #a1322c;
+  border: 1px solid #a1322c;
 }
 @media screen and (max-width: 1024px) {
   .sales__content {
