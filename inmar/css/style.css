@@ -1915,6 +1915,10 @@ a:focus {
   bottom: 0;
   left: 0;
   z-index: -1;
+  background-image: url(../img/content/bg-home-banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .home-bn3r__video video {
   width: 100%;
@@ -3194,13 +3198,10 @@ a:focus {
   right: 20px;
   transform: translateY(-50%);
 }
-.portfolio-modal .swiper-container {
+.portfolio-modal__gallery-top {
   height: 100%;
 }
-.portfolio-modal__slider {
-  height: 100%;
-}
-.portfolio-modal__slider-item {
+.portfolio-modal__gallery-top-item {
   height: initial;
   display: flex;
 }

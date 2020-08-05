@@ -371,8 +371,9 @@ export const order = () => {
 export const portfolioInner = () => {
   const modalElem = document.querySelector(`.js-portfolio-modal`);
   const modalOpenBtns = document.querySelectorAll(`.js-portfolio-modal-opener`);
-  const MODAL_CLASS_NAME = `modal--open`;
+  const MODAL_CLASS_NAME = `portfolio-modal--open`;
   let slider;
+  // let sliderThumbs;
 
 
   if (modalElem && modalOpenBtns) {
@@ -386,7 +387,7 @@ export const portfolioInner = () => {
           modalElem.classList.add(MODAL_CLASS_NAME);
           document.addEventListener(`keydown`, escKeyDownHandler);
 
-          slider = new Swiper(modalElem.querySelector(`.swiper-container`), {
+          slider = new Swiper(modalElem.querySelector(`.js-gallery-top`), {
             loop: true,
             navigation: {
               nextEl: `.swiper-button-next`,
@@ -394,6 +395,14 @@ export const portfolioInner = () => {
             },
           });
           slider.slideTo(index + 1, 0);
+
+          // sliderThumbs = new Swiper(modalElem.querySelector('.js-gallery-thumbs'), {
+          //   spaceBetween: 10,
+          //   slidesPerView: 4,
+          //   freeMode: true,
+          //   watchSlidesVisibility: true,
+          //   watchSlidesProgress: true,
+          // });
         }
       };
 
@@ -402,6 +411,7 @@ export const portfolioInner = () => {
           document.removeEventListener(`keydown`, escKeyDownHandler);
 
           slider.destroy();
+          // sliderThumbs.destroy();
       };
 
       const escKeyDownHandler = (evt) => {
