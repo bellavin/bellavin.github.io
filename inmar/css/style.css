@@ -3475,6 +3475,9 @@ a:focus {
   line-height: inherit;
   color: #a1322c;
 }
+.order__label-file {
+  display: table;
+}
 .order__payment-method-list {
   display: flex;
   margin-top: 31px;
@@ -3851,12 +3854,14 @@ a:focus {
 .contacts__map {
   margin-top: 32px;
 }
-.contacts__map img {
+.contacts__map img,
+.contacts__map iframe {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 450px;
   -o-object-fit: cover;
      object-fit: cover;
+  border: 0;
 }
 .contacts__bottom {
   padding: 41px 74px 34px;

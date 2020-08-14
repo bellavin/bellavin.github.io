@@ -120,7 +120,7 @@
               <p>Екатеринбург, ул.&nbsp;Маневровая&nbsp;123</p>
               <p><a href="tel: +73435677890">+7 343 567 78 90</a></p>
             </div>
-            <button class="footer__btn btn btn-reset">Напишите нам
+            <button class="footer__btn btn btn-reset js-footer-modal-opener-1">Напишите нам
             </button>
           </div>
           <div class="footer__center">
@@ -144,6 +144,55 @@
         </div>
       </div>
     </footer>
+    <div class="modal js-modal-1">
+      <div class="modal__overlay js-modal-overlay">
+      </div>
+      <div class="modal__content">
+        <button class="modal__btn-close btn-reset js-modal-close">
+        </button>
+        <h3 class="modal__title">Напишите нам
+        </h3>
+        <form class="modal__form">
+          <ul class="modal__list list-reset">
+            <li class="modal__item"><input class="modal__input input-text" id="modal-name" name="modal-name" type="text" placeholder="Как Вас зовут?"/>
+              <label class="modal__label label-text" for="modal-name">
+              </label>
+            </li>
+            <li class="modal__item"><input class="modal__input input-text" id="modal-phone" name="modal-phone" type="tel" placeholder="Ваш телефон"/>
+              <label class="modal__label label-text" for="modal-phone">
+              </label>
+            </li>
+            <li class="modal__item"><textarea class="modal__input input-text" id="modal-comment" name="modal-comment" placeholder="Комментарий"></textarea>
+              <label class="modal__label label-text" for="modal-comment">
+              </label>
+            </li>
+          </ul>
+          <div class="modal__capcha"><img src="img/content/capcha.jpg">
+          </div>
+          <div class="modal__offer">
+            Отправляя данную форму подтверждаю, что ознакомлен с<a href="">политикой конфиденциальности</a>
+            и даю согласие на
+            <a href="">обработку персональных данных</a>
+          </div>
+          <button class="modal__btn btn btn-reset js-modal-submit">Отправить
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="modal js-modal-2">
+      <div class="modal__overlay js-modal-overlay">
+      </div>
+      <div class="modal__content">
+        <button class="modal__btn-close btn-reset js-modal-close">
+        </button>
+        <h3 class="modal__title">Спасибо
+        </h3>
+        <div class="modal__text">Ваше сообщение успешно отправлено
+        </div>
+        <button class="modal__btn btn btn-reset js-modal-submit">Отправить
+        </button>
+      </div>
+    </div>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>

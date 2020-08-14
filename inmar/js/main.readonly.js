@@ -1,6 +1,7 @@
 import {forEachPolyfill} from './utils/polyfill-foreach';
 import {initIe11Download} from './utils/init-ie11-download';
 import {menu} from './utils/menu';
+import {footer} from './modules/footer';
 import {homepage} from './modules/homepage';
 import {productInner} from './modules/product-inner';
 import {order} from './modules/order';
@@ -19,6 +20,7 @@ menu(`.top-menu__nav`, `.top-menu__nav-toggle-burger`, `.top-menu__nav-toggle-ov
 
 // Modules
 // ---------------------------------
+footer();
 homepage();
 productInner();
 order();
@@ -241,8 +243,8 @@ export const cart = () => {
 import {setModalEvents} from '../utils/set-modal-events';
 
 export const contacts = () => {
-  const modal1 = document.querySelector(`.js-contacts-modal-1`);
-  const modal2 = document.querySelector(`.js-contacts-modal-2`);
+  const modal1 = document.querySelector(`.js-modal-1`);
+  const modal2 = document.querySelector(`.js-modal-2`);
 
   const modal1OpenBtn = document.querySelector(`.js-contacts-modal-opener-1`);
   const modal2OpenBtn = document.querySelector(`.js-contacts-modal-opener-2`);
@@ -257,6 +259,29 @@ export const contacts = () => {
     setModalEvents(modal2, modal2OpenBtn, `modal--open`);
   }
 }
+
+import {setModalEvents} from '../utils/set-modal-events';
+
+export const footer = () => {
+  const modal1 = document.querySelector(`.js-modal-1`);
+  const modal2 = document.querySelector(`.js-modal-2`);
+
+  const modal1OpenBtn = document.querySelector(`.js-footer-modal-opener-1`);
+  const modal2OpenBtn = document.querySelector(`.js-footer-modal-opener-2`);
+
+
+
+  if (modal1 && modal1OpenBtn) {
+    setModalEvents(modal1, modal1OpenBtn, `modal--open`);
+  }
+
+  if (modal2 && modal1OpenBtn) {
+    setModalEvents(modal2, modal2OpenBtn, `modal--open`);
+  }
+}
+
+import {setModalEvents} from '../utils/set-modal-events';
+
 
 export const homepage = () => {
 
@@ -326,6 +351,23 @@ export const homepage = () => {
     salesMobileSlider();
   });
 
+
+
+  const modal1 = document.querySelector(`.js-modal-1`);
+  const modal2 = document.querySelector(`.js-modal-2`);
+
+  const modal1OpenBtn = document.querySelector(`.js-bn3r-modal-opener-1`);
+  const modal2OpenBtn = document.querySelector(`.js-bn3r-modal-opener-2`);
+
+
+
+  if (modal1 && modal1OpenBtn) {
+    setModalEvents(modal1, modal1OpenBtn, `modal--open`);
+  }
+
+  if (modal2 && modal1OpenBtn) {
+    setModalEvents(modal2, modal2OpenBtn, `modal--open`);
+  }
 }
 
 export const order = () => {
@@ -336,10 +378,6 @@ export const order = () => {
     const toggleCompanyElem = orderElem.querySelector(`.js-order-toggle-company`);
     const formPersonElem = orderElem.querySelector(`.js-order-form-person`);
     const formCompanyElem = orderElem.querySelector(`.js-order-form-company`);
-
-    console.log(togglePersonElem);
-
-
 
     const openPersonForm = () => {
       if(togglePersonElem.checked) {
