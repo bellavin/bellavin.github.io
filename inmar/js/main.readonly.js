@@ -258,6 +258,18 @@ export const contacts = () => {
   if (modal2 && modal1OpenBtn) {
     setModalEvents(modal2, modal2OpenBtn, `modal--open`);
   }
+
+  // const mapElem = document.querySelector(`.js-contacts-map`);
+  // if (mapElem) {
+    // let map;
+
+    // function initMap() {
+    //   map = new google.maps.Map(mapElem, {
+    //     center: { lat: -34.397, lng: 150.644 },
+    //     zoom: 8
+    //   });
+    // }
+  // }
 }
 
 import {setModalEvents} from '../utils/set-modal-events';

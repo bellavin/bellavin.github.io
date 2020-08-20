@@ -1786,6 +1786,7 @@ a:focus {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 11px;
   color: white;
+  text-align: center;
   background-color: #a1322c;
   border-radius: 10px;
 }
@@ -3491,10 +3492,11 @@ a:focus {
 .order__payment-method-label {
   position: relative;
   box-sizing: border-box;
-  display: block;
+  display: flex;
+  align-items: center;
   width: 205px;
   height: 86px;
-  padding: 24px 10px 24px 65px;
+  padding: 24px 10px;
   font-size: 16px;
   font-weight: bold;
   line-height: 1;
@@ -3507,43 +3509,29 @@ a:focus {
   color: #a1322c;
   transition: color 0.3s;
 }
-.order__payment-method-label::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
+.order__payment-method-label img {
+  flex-shrink: 0;
   display: block;
-  width: 65px;
+  margin-right: 15px;
+  width: 38px;
   height: 100%;
   -webkit-filter: brightness(0);
           filter: brightness(0);
-  background-position: center;
-  background-repeat: no-repeat;
+  -o-object-fit: contain;
+     object-fit: contain;
   transition: -webkit-filter 0.3s;
   transition: filter 0.3s;
   transition: filter 0.3s, -webkit-filter 0.3s;
 }
-.order__payment-method-label:hover::before {
+.order__payment-method-label:hover img {
   -webkit-filter: brightness(1);
           filter: brightness(1);
-}
-.order__payment-method-label--cash::before {
-  background-image: url(../img/content/icon-wallet.png);
-}
-.order__payment-method-label--card::before {
-  background-image: url(../img/content/icon-visa.png);
-}
-.order__payment-method-label--yandex-money {
-  padding-right: 20px;
-}
-.order__payment-method-label--yandex-money::before {
-  background-image: url(../img/content/icon-yandex-money.png);
 }
 .order__payment-method-input:checked ~ .order__payment-method-label {
   color: #a1322c;
   border-color: #a1322c;
 }
-.order__payment-method-input:checked ~ .order__payment-method-label::before {
+.order__payment-method-input:checked ~ .order__payment-method-label img {
   -webkit-filter: brightness(1);
           filter: brightness(1);
 }
@@ -3862,6 +3850,8 @@ a:focus {
   -o-object-fit: cover;
      object-fit: cover;
   border: 0;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
 }
 .contacts__bottom {
   padding: 41px 74px 34px;
