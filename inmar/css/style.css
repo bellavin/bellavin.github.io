@@ -3891,9 +3891,6 @@ a:focus {
   border-color: #a1322c;
 }
 @media screen and (max-width: 1440px) {
-  .contacts {
-    padding-right: 20px;
-  }
   .contacts__bottom {
     padding-left: 20px;
     padding-right: 20px;
