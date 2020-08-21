@@ -3847,8 +3847,6 @@ a:focus {
   display: block;
   width: 100%;
   height: 450px;
-  -o-object-fit: cover;
-     object-fit: cover;
   border: 0;
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
