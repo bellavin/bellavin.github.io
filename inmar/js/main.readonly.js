@@ -163,12 +163,16 @@ export const setModalEvents = (modalElem, openBtnElem, modalClassName) => {
     if (modalElem) {
       modalElem.classList.add(modalClassName);
       document.addEventListener(`keydown`, escKeyDownHandler);
+      document.body.classList.add(`scroll-lock`);
     }
   };
 
   const closeModalHandler = () => {
-      modalElem.classList.remove(modalClassName);
-      document.removeEventListener(`keydown`, escKeyDownHandler);
+    modalElem.classList.remove(modalClassName);
+    document.removeEventListener(`keydown`, escKeyDownHandler);
+    if (document.body.classList.contains(`scroll-lock`)) {
+      document.body.classList.remove(`scroll-lock`);
+    }
   };
 
   const escKeyDownHandler = (evt) => {
