@@ -1027,7 +1027,7 @@ a:focus {
 }
 .container {
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 1920px;
   min-width: 320px;
   box-sizing: border-box;
 }
@@ -2944,7 +2944,7 @@ a:focus {
 }
 .portfolio__title {
   position: absolute;
-  bottom: 25%;
+  bottom: 30%;
   left: 2.25%;
   z-index: 1;
   margin-top: 0;
@@ -3067,6 +3067,9 @@ a:focus {
   }
 }
 @media screen and (max-width: 768px) {
+  .portfolio__title {
+    top: 10%;
+  }
   .portfolio__item,
   .portfolio__item:nth-child(even) {
     flex-direction: row;
