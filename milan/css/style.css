@@ -1,20 +1,26 @@
 @font-face {
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: normal;
-  src: local("opensans") url(../fonts/opensans.woff2) format("woff2"), url(../fonts/opensans.woff) format("woff");
+  src: local("opensans"), url(../fonts/opensans.woff2) format("woff2"), url(../fonts/opensans.woff) format("woff");
 }
 @font-face {
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: bold;
-  src: local("opensansbold") url(../fonts/opensansbold.woff2) format("woff2"), url(../fonts/opensansbold.woff) format("woff");
+  src: local("opensansbold"), url(../fonts/opensansbold.woff2) format("woff2"), url(../fonts/opensansbold.woff) format("woff");
 }
 @font-face {
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 300;
-  src: local("opensanslight") url(../fonts/opensanslight.woff2) format("woff2"), url(../fonts/opensanslight.woff) format("woff");
+  src: local("opensanslight"), url(../fonts/opensanslight.woff2) format("woff2"), url(../fonts/opensanslight.woff) format("woff");
+}
+@font-face {
+  font-family: "American Typewriter Bold";
+  font-style: normal;
+  font-weight: bold;
+  src: url(../fonts/AmericanTypewriterLTCnRusb-Bold.woff2) format("woff2"), url(../fonts/AmericanTypewriterLTCnRusb-Bold.woff) format("woff");
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -452,17 +458,20 @@ body {
   height: 100%;
   overflow: hidden;
 }
-.menu {
+.menu__inner {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   display: table;
-  margin: 2rem auto 0;
+  margin: 0 auto 0;
   font-size: 16px;
 }
 .menu__heading {
+  font-family: "American Typewriter Bold";
+  color: #2F191B;
   margin: 0;
   padding: 2rem 0;
-  font-size: 34px;
+  font-size: 45px;
   line-height: 3rem;
-  text-transform: uppercase;
 }
 .menu__list {
   display: -ms-grid;
@@ -532,6 +541,7 @@ body {
   height: 3rem;
   border-radius: 50%;
   z-index: 1;
+  box-shadow: -2px 2px 3px 0 rgba(0, 0, 0, 0.5);
 }
 .menu__features-item svg {
   position: relative;
@@ -549,9 +559,9 @@ body {
 }
 .menu__features-item--chicken {
   background-color: #E8D4A3;
-  transform: scale(-1, 1);
 }
 .menu__features-item--chicken svg {
+  transform: translate(-50%, -50%) scale(-1, 1);
   -webkit-filter: none;
           filter: none;
 }
@@ -571,25 +581,45 @@ body {
   -webkit-filter: none;
           filter: none;
 }
-.menu__list--horizontal {
+.menu--horizontal .menu__list {
   -ms-grid-columns: 24em 24em 24em;
   grid-template-columns: 24em 24em 24em;
   grid-gap: 3em;
 }
-.menu__list--horizontal .menu__item {
+.menu--horizontal .menu__item {
   flex-direction: row;
 }
-.menu__list--horizontal .menu__img {
+.menu--horizontal .menu__img {
   width: 9em;
   height: 9em;
 }
-.menu__list--horizontal .menu__txt {
+.menu--horizontal .menu__txt {
   padding-left: 1rem;
 }
-.menu__list--horizontal .menu__title {
+.menu--horizontal .menu__title {
   margin-top: 0;
 }
-.menu__list--horizontal .menu__features-list {
+.menu--horizontal .menu__features-list {
   right: auto;
   left: -1rem;
+}
+.menu--horizontal .menu__features-item {
+  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.5);
+}
+.menu--dark {
+  background-color: #2F191B;
+  background-color: black;
+}
+.menu--dark .menu__heading {
+  color: #E8D4A3;
+}
+.menu--dark .menu__title {
+  color: #E8D4A3;
+}
+.menu--dark .menu__desc {
+  color: white;
+}
+.menu--dark .menu__price {
+  color: #2F191B;
+  background-color: #E8D4A3;
 }
