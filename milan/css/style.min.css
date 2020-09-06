@@ -458,6 +458,9 @@ body {
   height: 100%;
   overflow: hidden;
 }
+.menu {
+  min-width: 1566px;
+}
 .menu__inner {
   padding-top: 2rem;
   padding-bottom: 2rem;
