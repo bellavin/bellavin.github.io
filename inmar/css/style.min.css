@@ -3365,6 +3365,12 @@ a:focus {
 .product-inner__left {
   flex-basis: calc(60% - 40px);
 }
+.product-inner__img-pic {
+  display: none;
+}
+.product-inner__img-pic.active {
+  display: block;
+}
 .product-inner__left ~ .product-inner__right {
   box-sizing: border-box;
   flex-basis: 40%;
