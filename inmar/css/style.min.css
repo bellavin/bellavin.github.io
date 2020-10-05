@@ -3367,6 +3367,10 @@ a:focus {
 }
 .product-inner__img-pic {
   display: none;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .product-inner__img-pic.active {
   display: block;
